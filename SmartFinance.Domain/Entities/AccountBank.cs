@@ -1,8 +1,10 @@
-﻿namespace SmartFinance.Domain.Entities
+﻿using SmartFinance.Domain.Enums;
+
+namespace SmartFinance.Domain.Entities
 {
     public sealed class AccountBank
     {
-        public AccountBank(int id, int userId, User user, string bankName, int accountNumber, int agencyNumber, int accountType, decimal balance, decimal interestRate)
+        public AccountBank(int id, int userId, User user, string bankName, int accountNumber, int agencyNumber, AccountType accountType, decimal balance, decimal interestRate)
         {
             Id = id;
             UserId = userId;
@@ -27,7 +29,7 @@
 
         public int AgencyNumber { get; private set; }
 
-        public int AccountType { get; private set; }
+        public AccountType AccountType { get; private set; }
 
         public decimal Balance { get; private set; }
 

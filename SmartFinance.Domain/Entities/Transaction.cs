@@ -2,7 +2,7 @@
 {
     public sealed class Transaction
     {
-        public Transaction(int id, int accountBankId, AccountBank accountBank, int transactionType, decimal amount, string description)
+        public Transaction(int id, int accountBankId, AccountBank accountBank, string transactionType, decimal amount, string description)
         {
             Id = id;
             AccountBankId = accountBankId;
@@ -18,7 +18,7 @@
 
         public AccountBank AccountBank { get; private set; }
 
-        public int TransactionType { get; private set; }
+        public string TransactionType { get; private set; }
 
         public decimal Amount { get; private set; }
 

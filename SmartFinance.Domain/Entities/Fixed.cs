@@ -2,7 +2,7 @@
 {
     public sealed class Fixed
     {
-        public Fixed(int id, int userId, User user, string description, decimal amount, int recurrence, int nextDueDate, DateTime createdDate, int fixedType)
+        public Fixed(int id, int userId, User user, string description, decimal amount, int recurrence, int nextDueDate, DateTime createdDate, string fixedType)
         {
             Id = id;
             UserId = userId;
@@ -31,6 +31,6 @@
 
         public DateTime CreatedDate { get; private set; }
 
-        public int FixedType { get; private set; }
+        public string FixedType { get; private set; }
     }
 }
