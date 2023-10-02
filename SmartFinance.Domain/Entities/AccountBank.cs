@@ -17,6 +17,12 @@ namespace SmartFinance.Domain.Entities
             InterestRate = interestRate;
         }
 
+        public AccountBank()
+        {
+            Transactions = default!;
+            Fixeds = default!;
+        }
+
         public int Id { get; private set; }
 
         public int UserId { get; private set; }
@@ -34,5 +40,9 @@ namespace SmartFinance.Domain.Entities
         public decimal Balance { get; private set; }
 
         public decimal InterestRate { get; private set; }
+
+        public ICollection<Transaction> Transactions { get; set; }
+
+        public ICollection<Fixed> Fixeds { get; set; }
     }
 }

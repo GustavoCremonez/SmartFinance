@@ -1,4 +1,6 @@
-﻿namespace SmartFinance.Domain.Entities
+﻿using System.Collections;
+
+namespace SmartFinance.Domain.Entities
 {
     public sealed class User
     {
@@ -12,6 +14,11 @@
             Birthdate = birthdate;
         }
 
+        public User()
+        {
+            BankAccounts = default!;
+        }
+
         public int Id { get; private set; }
 
         public string Name { get; private set; }
@@ -23,5 +30,7 @@
         public string Password { get; private set; }
 
         public DateTime Birthdate { get; private set; }
+
+        public ICollection<AccountBank> BankAccounts { get; set; }
     }
 }

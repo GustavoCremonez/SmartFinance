@@ -12,6 +12,10 @@
             Description = description;
         }
 
+        public Transaction()
+        {
+        }
+
         public int Id { get; private set; }
 
         public int AccountBankId { get; private set; }

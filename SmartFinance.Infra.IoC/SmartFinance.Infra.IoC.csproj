@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartFinance.Application\SmartFinance.Application.csproj" />
+    <ProjectReference Include="..\SmartFinance.Domain\SmartFinance.Domain.csproj" />
+    <ProjectReference Include="..\SmartFinance.Infra.Data\SmartFinance.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

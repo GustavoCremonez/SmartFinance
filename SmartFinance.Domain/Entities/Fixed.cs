@@ -2,11 +2,11 @@
 {
     public sealed class Fixed
     {
-        public Fixed(int id, int userId, User user, string description, decimal amount, int recurrence, int nextDueDate, DateTime createdDate, string fixedType)
+        public Fixed(int id, int accountBankId, AccountBank accountBank, string description, decimal amount, int recurrence, int nextDueDate, DateTime createdDate, string fixedType)
         {
             Id = id;
-            UserId = userId;
-            User = user;
+            AccountBankId = accountBankId;
+            AccountBank = accountBank;
             Description = description;
             Amount = amount;
             Recurrence = recurrence;
@@ -15,11 +15,15 @@
             FixedType = fixedType;
         }
 
+        public Fixed()
+        {
+        }
+
         public int Id { get; private set; }
 
-        public int UserId { get; private set; }
+        public int AccountBankId { get; set; }
 
-        public User User { get; private set; }
+        public AccountBank AccountBank { get; set; }
 
         public string Description { get; private set; }
 
