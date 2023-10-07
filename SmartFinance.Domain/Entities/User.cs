@@ -4,19 +4,18 @@ namespace SmartFinance.Domain.Entities
 {
     public sealed class User
     {
-        public User(int id, string name, string email, string phone_number, string password, DateTime birthdate)
+        public User(string name, string email, string phone_number, string password, DateTime birthdate)
         {
-            Id = id;
             Name = name;
             Email = email;
             Phone_number = phone_number;
             Password = password;
             Birthdate = birthdate;
+            BankAccounts = default!;
         }
 
-        public User()
+        protected User()
         {
-            BankAccounts = default!;
         }
 
         public int Id { get; private set; }

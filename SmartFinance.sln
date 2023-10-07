@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinance.API", "SmartFinance.API\SmartFinance.API.csproj", "{7520E13B-90F1-4914-9A16-DAC64B945825}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFinance.API", "SmartFinance.API\SmartFinance.API.csproj", "{7520E13B-90F1-4914-9A16-DAC64B945825}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinance.Domain", "SmartFinance.Domain\SmartFinance.Domain.csproj", "{73350576-9307-4F68-9D36-67AF4D8745DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFinance.Domain", "SmartFinance.Domain\SmartFinance.Domain.csproj", "{73350576-9307-4F68-9D36-67AF4D8745DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinance.Application", "SmartFinance.Application\SmartFinance.Application.csproj", "{EC64A85D-7305-48FA-BA5F-AD70FB7ADBAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFinance.Application", "SmartFinance.Application\SmartFinance.Application.csproj", "{EC64A85D-7305-48FA-BA5F-AD70FB7ADBAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinance.Infra.Data", "SmartFinance.Infra.Data\SmartFinance.Infra.Data.csproj", "{2C9FB880-3F63-4B14-A223-591C4BFA83F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFinance.Infra.Data", "SmartFinance.Infra.Data\SmartFinance.Infra.Data.csproj", "{2C9FB880-3F63-4B14-A223-591C4BFA83F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinance.Infra.IoC", "SmartFinance.Infra.IoC\SmartFinance.Infra.IoC.csproj", "{E19C6A17-C760-4420-8E5D-B9301D80E8F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFinance.Infra.IoC", "SmartFinance.Infra.IoC\SmartFinance.Infra.IoC.csproj", "{E19C6A17-C760-4420-8E5D-B9301D80E8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinance.DTO", "SmartFinance.DTO\SmartFinance.DTO.csproj", "{79AF6A21-DC9C-4816-B895-4060D9CBC5B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E19C6A17-C760-4420-8E5D-B9301D80E8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E19C6A17-C760-4420-8E5D-B9301D80E8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E19C6A17-C760-4420-8E5D-B9301D80E8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79AF6A21-DC9C-4816-B895-4060D9CBC5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AF6A21-DC9C-4816-B895-4060D9CBC5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AF6A21-DC9C-4816-B895-4060D9CBC5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AF6A21-DC9C-4816-B895-4060D9CBC5B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

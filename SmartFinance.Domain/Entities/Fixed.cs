@@ -15,10 +15,6 @@
             FixedType = fixedType;
         }
 
-        public Fixed()
-        {
-        }
-
         public int Id { get; private set; }
 
         public int AccountBankId { get; set; }

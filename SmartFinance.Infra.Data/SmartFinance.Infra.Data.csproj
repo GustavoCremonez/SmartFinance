@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartFinance.Domain\SmartFinance.Domain.csproj" />
+    <ProjectReference Include="..\SmartFinance.DTO\SmartFinance.DTO.csproj" />
   </ItemGroup>
 
 </Project>

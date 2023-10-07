@@ -15,10 +15,6 @@ namespace SmartFinance.Domain.Entities
             AccountType = accountType;
             Balance = balance;
             InterestRate = interestRate;
-        }
-
-        public AccountBank()
-        {
             Transactions = default!;
             Fixeds = default!;
         }
