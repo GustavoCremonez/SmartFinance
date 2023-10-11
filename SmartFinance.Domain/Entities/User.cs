@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Xml.Linq;
 
 namespace SmartFinance.Domain.Entities
 {
@@ -14,8 +15,14 @@ namespace SmartFinance.Domain.Entities
             BankAccounts = default!;
         }
 
-        protected User()
+        public User()
         {
+            Name = default!;
+            Email = default!;
+            Phone_number = default!;
+            Password = default!;
+            Birthdate = default!;
+            BankAccounts = default!;
         }
 
         public int Id { get; private set; }

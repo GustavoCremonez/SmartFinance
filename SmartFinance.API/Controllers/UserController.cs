@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SmartFinance.Domain.Contracts;
+using SmartFinance.Application.Contracts;
 using SmartFinance.Domain.Entities;
+using SmartFinance.DTO.DTOs;
 
 namespace SmartFinance.API.Controllers
 {
@@ -25,16 +26,16 @@ namespace SmartFinance.API.Controllers
         {
             try
             {
-                User? entity = await _userService.GetUserAsync(id);
+                UserDto? entity = await _userService.GetUserAsync(id);
 
                 if (entity == null)
                     return NotFound();
                 else
                     return Ok(entity);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -42,16 +43,50 @@ namespace SmartFinance.API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Consumes("application/json")]
-        public async Task<IActionResult> Create(User user)
+        public async Task<IActionResult> Post(UserDto user)
         {
             try
             {
                 await _userService.CreateUserAsync(user);
-                return CreatedAtAction(nameof(Create), user);
+                return CreatedAtAction(nameof(Post), user);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest( ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Consumes("application/json")]
+        public async Task<IActionResult> Put(UserDto user)
+        {
+            try
+            {
+                await _userService.UpdateUserAsync(user);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Consumes("application/json")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _userService.DeleteUserAsync(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }

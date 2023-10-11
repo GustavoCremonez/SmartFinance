@@ -1,4 +1,6 @@
-﻿namespace SmartFinance.Domain.Entities
+﻿using Microsoft.VisualBasic.FileIO;
+
+namespace SmartFinance.Domain.Entities
 {
     public sealed class Fixed
     {
@@ -13,6 +15,19 @@
             NextDueDate = nextDueDate;
             CreatedDate = createdDate;
             FixedType = fixedType;
+        }
+
+        public Fixed()
+        {
+            Id = default!;
+            AccountBankId = default!;
+            AccountBank = default!;
+            Description = default!;
+            Amount = default!;
+            Recurrence = default!;
+            NextDueDate = default!;
+            CreatedDate = default!;
+            FixedType = default!;
         }
 
         public int Id { get; private set; }

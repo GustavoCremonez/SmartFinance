@@ -19,6 +19,21 @@ namespace SmartFinance.Domain.Entities
             Fixeds = default!;
         }
 
+        public AccountBank()
+        {
+            Id = default!;
+            UserId = default!;
+            User = default!;
+            BankName = default!;
+            AccountNumber = default!;
+            AgencyNumber = default!;
+            AccountType = default!;
+            Balance = default!;
+            InterestRate = default!;
+            Transactions = default!;
+            Fixeds = default!;
+        }
+
         public int Id { get; private set; }
 
         public int UserId { get; private set; }

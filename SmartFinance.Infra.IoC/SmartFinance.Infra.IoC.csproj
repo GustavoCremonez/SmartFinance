@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SmartFinance.Application\SmartFinance.Application.csproj" />
     <ProjectReference Include="..\SmartFinance.Domain\SmartFinance.Domain.csproj" />
     <ProjectReference Include="..\SmartFinance.Infra.Data\SmartFinance.Infra.Data.csproj" />

@@ -12,6 +12,16 @@
             Description = description;
         }
 
+        public Transaction()
+        {
+            Id = default!;
+            AccountBankId = default!;
+            AccountBank = default!;
+            TransactionType = default!;
+            Amount = default!;
+            Description = default!;
+        }
+
         public int Id { get; private set; }
 
         public int AccountBankId { get; private set; }

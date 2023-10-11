@@ -1,41 +1,32 @@
-﻿using SmartFinance.Application.DTOs;
+﻿using AutoMapper;
+using SmartFinance.Application.Contracts;
 using SmartFinance.Domain.Contracts;
 using SmartFinance.Domain.Entities;
+using SmartFinance.DTO.DTOs;
 
 namespace SmartFinance.Application.Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
 
-        public async Task<User?> GetUserAsync(int id)
+        public async Task<UserDto?> GetUserAsync(int id)
         {
             User? user = await _userRepository.GetUserAsync(id);
 
-            if (user != null)
-            {
-                UserDto userDto = new UserDto()
-                {
-                    Id = user.Id,
-                    Name = user.Name,
-                    Email = user.Email,
-                    Birthdate = user.Birthdate,
-                    Password = user.Password,
-                    Phone_number = user.Phone_number
-                };
-            }
-
-            return user;
+            return _mapper.Map<UserDto?>(user);
         }
 
-        public async Task CreateUserAsync(User entity)
+        public async Task CreateUserAsync(UserDto userDto)
         {
-            await _userRepository.CreateUserAsync(entity);
+            await _userRepository.CreateUserAsync(_mapper.Map<User>(userDto));
         }
 
         public async Task DeleteUserAsync(int id)
@@ -43,9 +34,11 @@ namespace SmartFinance.Application.Services
             await _userRepository.DeleteUserAsync(id);
         }
 
-        public async Task<User> UpdateUserAsync(User entity)
+        public async Task<UserDto> UpdateUserAsync(UserDto userDto)
         {
-            return await _userRepository.UpdateUserAsync(entity);
+            User entity = _mapper.Map<User>(userDto);
+
+            return _mapper.Map<UserDto>(await _userRepository.UpdateUserAsync(entity));
         }
     }
 }

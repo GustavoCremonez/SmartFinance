@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SmartFinance.Application.Contracts;
+using SmartFinance.Application.Mappings;
 using SmartFinance.Application.Services;
 using SmartFinance.Domain.Contracts;
 using SmartFinance.Infra.Data.Context;
@@ -18,6 +20,8 @@ namespace SmartFinance.Infra.IoC
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
+
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
         }
